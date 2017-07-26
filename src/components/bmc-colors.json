@@ -1,0 +1,52 @@
+[
+  {"color": "#625c4e", "colorName": "bmcStone"},
+
+
+  {"color": "#a19f93", "colorName": "bmcFarinaGrey"},
+  {"color": "#a61618", "colorName": "bmcColoradoRed"},
+  {"color": "#897968", "colorName": "bmcSandyBiege"},
+  {"color": "#6c8aa4", "colorName": "bmcIrisBlue"},
+
+  {"color": "#454641", "colorName": "bmcGrampianGrey"},
+  {"color": "#9c0f15", "colorName": "bmcDamaskRed"},
+  {"color": "#d4be99", "colorName": "bmcLagunaBeige"},
+  {"color": "#7c8980", "colorName": "bmcSmokeGrey"},
+  {"color": "#6cbe9d", "colorName": "bmcFloridaGreen"},
+  {"color": "#b1a389", "colorName": "bmcChelseaGrey"},
+
+  {"color": "#998965", "colorName": "bmcElPasoBeige"},
+
+  {"color": "#1a3d34", "colorName": "bmcSprueGreen"},
+  {"color": "#525e5e", "colorName": "bmcMistGrey"},
+  {"color": "#911116", "colorName": "bmcTartanRed2"},
+  {"color": "#775d44", "colorName": "bmcTitianBeige"},
+  {"color": "#417783", "colorName": "bmcSurfBlue"},
+  {"color": "#8a9b77", "colorName": "bmcPorcelainGreen"},
+  {"color": "#7a7369", "colorName": "bmcDoveGrey"},
+  {"color": "#735246", "colorName": "bmcAriancaBeige"},
+  {"color": "#b2171a", "colorName": "bmcSignalRed"},
+  {"color": "#0d212c", "colorName": "bmcTrafalgarBlue"},
+
+
+  {"color": "#d7c7a4", "colorName": "bmcOldEnglighWhite"},
+  {"color": "#62696f", "colorName": "bmcIceBlueMet"},
+  {"color": "#2d4a52", "colorName": "bmcPersianBlue"},
+
+  {"color": "#757978", "colorName": "bmcCumulusGrey"},
+  {"color": "#dfd2b0", "colorName": "bmcSnowberryWhite"},
+  {"color": "#59686f", "colorName": "bmcHealyBlueMet"},
+  {"color": "#7b9b90", "colorName": "bmcBermudaBlue"},
+  {"color": "#324633", "colorName": "bmcAlmondGreen"},
+  {"color": "#c2bea5", "colorName": "bmcArabianGrey"},
+
+  {"color": "#214859", "colorName": "bmcFlorentineBlue"},
+  {"color": "#a5c4be", "colorName": "bmcHonoluluBlue"},
+  {"color": "#888f6f", "colorName": "bmcGlenGreen"},
+  {"color": "#98937e", "colorName": "bmcCanyonGrey"},
+  {"color": "#b1b582", "colorName": "bmcFiestaYellow"},
+
+  {"color": "#557e70", "colorName": "bmcAquamarine"},
+  {"color": "#5b6153", "colorName": "bmcTweedGrey"},
+  {"color": "#717157", "colorName": "bmcMandalaryGrey"},
+  {"color": "#e1c47a", "colorName": "bmcPalePrimrose"}
+]

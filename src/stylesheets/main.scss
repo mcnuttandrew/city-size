@@ -1,0 +1,25 @@
+@import './node_modules/react-vis/dist/style';
+
+$black: #000;
+
+.title {
+  color: $black;
+  font-family: Roboto-Black;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.rv-xy-plot__series--label-text {
+  font-size: 8px;
+}
