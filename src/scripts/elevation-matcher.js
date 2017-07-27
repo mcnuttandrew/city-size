@@ -21,7 +21,7 @@ const cityElevations = LatLngs.results.reduce((res, latLng) => {
   return res;
 }, {});
 
-fs.writeFile('./src/data/city-elevations.json', JSON.stringify(cityElevations), (err) => {
+fs.writeFile('./src/data/city-elevations.json', JSON.stringify(cityElevations, null, 2), (err) => {
   if (err) {
     console.log('error');
     return;

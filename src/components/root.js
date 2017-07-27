@@ -2,7 +2,6 @@ import React from 'react';
 
 import {EXPLANATION} from '../constants';
 import SizeLine from './size-line';
-import Legend from './legend';
 
 class RootComponent extends React.Component {
   constructor(props) {
@@ -26,7 +25,6 @@ class RootComponent extends React.Component {
           this.setState({dataset: (dataset + 1) % 2});
         }}> BUTTON </div>
         <SizeLine dataset={dataset}/>
-        <Legend />
       </div>
     );
   }

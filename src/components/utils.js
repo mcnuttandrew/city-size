@@ -3,7 +3,40 @@ import {scaleLog} from 'd3-scale';
 
 import WikiData from '../data/wiki-data.json';
 import StateAbrevs from '../data/state-abrevs';
-import COLOR_RANGE from './bmc-colors.json';
+// import COLOR_RANGE from './bmc-colors.json';
+
+import CityElevations from '../data/city-elevations.json';
+import BuildHeights from '../data/hashed-max-heights.json';
+
+import {scaleQuantile} from 'd3-scale';
+
+export const DIV_COLOR = [
+  '#8c510a',
+  '#d8b365',
+  '#b2171a',
+  '#6c8aa4',
+  '#6cbe9d',
+  '#01665e'
+];
+
+// the quantiles:
+// [198, 323, 411, 555, 791]
+export const heightScale = scaleQuantile()
+  .domain(Object.keys(BuildHeights).map(cityName => BuildHeights[cityName]))
+  .range(DIV_COLOR);
+
+// the quantiles
+// [14, 58, 156, 222, 382]
+export const elevationScale = scaleQuantile()
+  .domain(Object.keys(CityElevations).map(cityName => CityElevations[cityName]))
+  .range(DIV_COLOR);
+
+function getColor(cityName, state, dataindex) {
+  if (dataindex) {
+    return elevationScale(CityElevations[cityName]);
+  }
+  return heightScale(BuildHeights[cityName]);
+}
 
 export function getAvgHeight(dataset) {
   const buildSum = Object.keys(dataset).reduce((res, cityName) => {
@@ -17,23 +50,23 @@ export function sqMiAccesor(city) {
 }
 
 export function getDomains(data) {
-  return data.reduce((res, city, index) => {
-    res.xMax = Math.max(res.xMax, city.x);
-    res.xMin = Math.min(res.xMin, city.x);
-    res.yMax = Math.max(res.yMax, city.y);
-    res.yMin = Math.min(res.yMin, city.y);
+  return data.reduce((res, row, index) => {
+    res.xMax = Math.max(res.xMax, row.x);
+    res.xMin = Math.min(res.xMin, row.x);
+    res.yMax = Math.max(res.yMax, row.y);
+    res.yMin = Math.min(res.yMin, row.y);
     return res;
   }, {xMax: -Infinity, xMin: Infinity, yMin: Infinity, yMax: -Infinity});
 }
 
 const stringTemplates = {
   0: d => `${d} FT MAX`,
-  1: d => `${d} FT ELEV`
+  1: d => `${d} M ELEV`
 };
 
 export function prepData(dataset, dataindex) {
 
-  const formatter = format('.2s');
+  const formatter = format(',.2r');
   const HEIGHT_AVG = getAvgHeight(dataset);
   const preMappedWikiData = WikiData.sort((a, b) => {
     return sqMiAccesor(a) - sqMiAccesor(b);
@@ -49,11 +82,13 @@ export function prepData(dataset, dataindex) {
 
     const height = dataset[city.City];
     const heightDelta = dataset[city.City] - HEIGHT_AVG;
-    const color = COLOR_RANGE[(city['2016 rank'].replace(/,/g, '') + 4) % COLOR_RANGE.length];
+    // const color = COLOR_RANGE[(city['2016 rank'].replace(/,/g, '') + 4) % COLOR_RANGE.length];
+    const color = getColor(city.City, city.State, dataindex);
+    // console.log(color)
     return {
       x: heightDelta,
       y: sqMiAccesor(city),
-      color: color.color,
+      color,
       // label: [
       //   <tspan dx="0em">
       //     <tspan dx="0" dy="1em">{`${name}, ${state}`}</tspan>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {XYPlot, LabelSeries, LineSeries} from 'react-vis';
+import {XYPlot, LabelSeries, LineSeries, MarkSeries} from 'react-vis';
 
 import {getDomains} from './utils';
 
@@ -109,8 +109,7 @@ class SizeLine extends React.Component {
 
     const {yMin, yMax} = getDomains(originalData);
     const labelProps = {
-      allowOffsetToBeReversed: false,
-      animation: true
+      allowOffsetToBeReversed: false
     };
     return (
       <div>
@@ -126,6 +125,12 @@ class SizeLine extends React.Component {
             //     }
             //   }}/>
           }
+          <MarkSeries
+            style={{fillOpacity: 0.8}}
+            data={originalData}
+            size="2"
+            colorType="literal"
+            animation/>
           <LabelSeries
             data={mappedAndForced.map((d, index) => this.updateLabel(d, 'line1', index))}
             {...labelProps}/>
