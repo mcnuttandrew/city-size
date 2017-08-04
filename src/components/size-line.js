@@ -14,17 +14,10 @@ const datasets = [
   CityElevations
 ];
 
-const MARGIN = {
-  top: 100,
-  bottom: 100,
-  right: 100,
-  left: 100
-};
-
 const BONUS = {
   line1: 0,
-  line2: 17,
-  line3: 17 * 2
+  line2: 24,
+  line3: 24 * 2
 };
 
 class SizeLine extends React.Component {
@@ -75,7 +68,8 @@ class SizeLine extends React.Component {
         textAnchor: xDelta < 0 ? 'start' : 'end',
         fontFamily: 'Roboto-Black',
         alignmentBaseline: 'middle',
-        fill: '#c2bcae'
+        fill: '#c2bcae',
+        fontSize: '10px'
       }
     });
   }
@@ -114,9 +108,9 @@ class SizeLine extends React.Component {
     return (
       <div>
         <XYPlot
-          height={1000}
-          width={2000}
-          margin={MARGIN}>
+          height={1300}
+          width={1800}
+          margin={100}>
           {lines}
           {
             // <XAxis tickFormat={d => `${d} SQ MI`} orientation="top" style={{

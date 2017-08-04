@@ -26,7 +26,7 @@ export function forceDirectLabels(labels) {
       // .force('x', forceX())
       .stop();
 
-  for (let i = 0; i < 2000; i++) {
+  for (let i = 0; i < 4000; i++) {
     simulation.tick();
   }
   return nodes;
