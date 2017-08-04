@@ -21,12 +21,14 @@ export const DIV_COLOR = [
 
 // the quantiles:
 // [198, 323, 411, 555, 791]
+// AVG: 491.83 ft
 export const heightScale = scaleQuantile()
   .domain(Object.keys(BuildHeights).map(cityName => BuildHeights[cityName]))
   .range(DIV_COLOR);
 
 // the quantiles
 // [14, 58, 156, 222, 382]
+// AVG: 264.2 m
 export const elevationScale = scaleQuantile()
   .domain(Object.keys(CityElevations).map(cityName => CityElevations[cityName]))
   .range(DIV_COLOR);
