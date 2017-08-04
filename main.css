@@ -1,0 +1,55 @@
+html,
+body {
+  font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:visited {
+  color: #6c8aa4;
+  text-decoration: none;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  padding: 10% 20%;
+}
+
+.title {
+  display: flex;
+  font-size: 64px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.picture-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.picture-wrapper img {
+  max-height: 300px;
+}
+
+.picture-explainer {
+  font-size: 10px;
+}
+/* mobile adjustments */
+@media screen and (max-width: 600px) {
+  .app {
+    padding: 10% 10%;
+  }
+  .title {
+    font-size: 32px;
+  }
+}
